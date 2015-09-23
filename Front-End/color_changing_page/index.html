@@ -1,0 +1,32 @@
+<html>
+<head>
+  <!-- NO OTHER SCRIPT TAGS ALLOWED! NO JQUERY! -->
+<script>
+  function changeColor_helper() {
+     console.log("helper is called");
+   	 changeToRed();
+     setTimeout(changeToYellow, 2500);
+     setTimeout(changeToBlue, 3500);
+  }
+    
+  //helper function to change the color to red
+  function changeToRed() {
+    document.body.style.background = "red";
+  }
+    //helper function to change the color to green
+  function changeToYellow() {
+    document.body.style.background = "yellow";
+  }
+  //helper function to change the color to blue
+  function changeToBlue() {
+    document.body.style.background = "blue";
+  }
+</script>
+<style>
+  /* Your code here */
+</style>
+<body>
+  <!-- Your code here -->
+  <button onclick="setInterval(changeColor_helper, 5000)">Start changing colors</button>
+</body>
+</html>
