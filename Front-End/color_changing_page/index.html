@@ -21,12 +21,16 @@
   function changeToBlue() {
     document.body.style.background = "blue";
   }
+  function colorButtonClick() { 
+    changeColor_helper();
+    window.setInterval(changeColor_helper, 5000);
+  }
 </script>
 <style>
   /* Your code here */
 </style>
 <body>
   <!-- Your code here -->
-  <button onclick="setInterval(changeColor_helper, 5000)">Start changing colors</button>
+  <button onclick="colorButtonClick()" >Start changing colors</button>
 </body>
 </html>
