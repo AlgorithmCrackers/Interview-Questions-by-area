@@ -7,8 +7,9 @@
      //changeToRed();
      //setTimeout(changeToYellow, 2500);
      //setTimeout(changeToBlue, 3500);
-    console.log("red to yellow");
     redToYellow();
+    window.setTimeout( yellowToBlue, 2500);
+    window.setTimeout(blueToRed, 3500);
   }
   function setBackGround(x, y, z, time_interval) {
     console.log("set background");
@@ -16,16 +17,55 @@
         document.body.style.background = "rgb(" + x + "," + y + "," + z + ")"
         }, time_interval);
   }
-   
+
   function redToYellow() {
+    console.log("red to yellow");
     var x = 255
     var y = 00
     var z = 00
     document.body.style.background = "rgb("+ x + "," + y + "," + z + ")";
-    for (var y = 0; y <= 255; y += 8) {
-      setBackGround(x, y, z, 3000);
-    }
+    var interval = setInterval(function() { 
+        console.log("set Interval red to yellow");
+                          document.body.style.background = "rgb(" + x + "," + y + "," + z + ")";
+                          y += 8; 
+                          if(y >= 255) clearInterval(interval);
+                   }, 78);
+      //setBackGround(x, y, z);
   }
+  function yellowToBlue() {
+    console.log("yellow to blue");
+
+    var x = 255
+    var y = 255
+    var z = 00
+    document.body.style.background = "rgb("+ x + "," + y + "," + z + ")";
+    var interval = setInterval(function() { 
+        console.log("set Interval yellow to blue " + "rgb(" + x + "," + y + "," + z + ")");
+                          document.body.style.background = "rgb(" + x + "," + y + "," + z + ")";
+                          y -= 8; 
+                          z += 8;
+                          x -= 8;
+                          if(y <= 0) clearInterval(interval);
+                   }, 31);
+  }
+  function blueToRed() {
+    console.log("Blue to red");
+
+    var x = 00
+    var y = 00
+    var z = 255
+    document.body.style.background = "rgb("+ x + "," + y + "," + z + ")";
+    var interval = setInterval(function() { 
+        console.log("set Interval yellow to blue " + "rgb(" + x + "," + y + "," + z + ")");
+                          document.body.style.background = "rgb(" + x + "," + y + "," + z + ")"; 
+                          z -= 8;
+                          x += 8;
+                          if(z <= 0) clearInterval(interval);
+                   }, 46.8);
+  }
+  
+   
+  
   //helper function to change the color to red
   function changeToRed() {
     document.body.style.background = "red";
@@ -40,7 +80,7 @@
   }
   function colorButtonClick() { 
     changeColor_helper();
-    //window.setInterval(changeColor_helper, 5000);
+    window.setInterval(changeColor_helper, 5000);
   }
 </script>
 <style>
