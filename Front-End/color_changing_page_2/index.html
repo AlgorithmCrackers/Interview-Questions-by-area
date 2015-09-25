@@ -8,35 +8,18 @@
      //setTimeout(changeToYellow, 2500);
      //setTimeout(changeToBlue, 3500);
     redToYellow();
-    window.setTimeout( yellowToBlue, 2500);
+    window.setTimeout(yellowToBlue, 2500);
     window.setTimeout(blueToRed, 3500);
-  }
-  function setBackGround(x, y, z, time_interval) {
-    console.log("set background");
-    setTimeout(function() {
-        document.body.style.background = "rgb(" + x + "," + y + "," + z + ")"
-        }, time_interval);
   }
   function changeBackgroundWithRGB(x1, y1, z1, timeout, xreduce, yreduce, 
     zreduce, xincrease, yincrease, zincrease) {
     var x = x1;
     var y = y1;
     var z = z1;
+    // console.log(xreduce, yreduce, zreduce, xincrease, yincrease, zincrease);
     document.body.style.background = "rgb("+ x + "," + y + "," + z + ")";
     var interval = setInterval(function() { 
         document.body.style.background = "rgb(" + x + "," + y + "," + z + ")";
-        if (xincrease) {
-          x += 8; 
-          if(x >= 255) clearInterval(interval);
-        }
-        if (yincrease) {
-          y += 8; 
-          if(y >= 255) clearInterval(interval);
-        }
-        if (zincrease) {
-          z += 8; 
-          if(y >= 255) clearInterval(interval);
-        }
         if (xreduce) {
           x -= 8
           if(x <= 0) clearInterval(interval);
@@ -48,6 +31,18 @@
         if (zreduce) {
           z -= 8
           if(z <= 0) clearInterval(interval);
+        }
+        if (xincrease) {
+          x += 8; 
+          if(x >= 255) clearInterval(interval);
+        }
+        if (yincrease) {
+          y += 8; 
+          if(y >= 255) clearInterval(interval);
+        }
+        if (zincrease) {
+          z += 8; 
+          if(y >= 255) clearInterval(interval);
         }
     }, timeout);
   }
