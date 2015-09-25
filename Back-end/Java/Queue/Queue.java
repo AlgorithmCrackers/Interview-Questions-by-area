@@ -1,8 +1,4 @@
 /*
- * Welcome to the Wham City Lights Java queue 
- * interview question! The purpose of this format
- * is for me, Keith (co-founder & CEO) to 
- * understand your strengths as a coder.
  * 
  * Please implement a FIFO queue which passes
  * the test below. Your solution will be judged

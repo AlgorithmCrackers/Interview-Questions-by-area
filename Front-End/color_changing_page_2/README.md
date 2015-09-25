@@ -1,6 +1,4 @@
 ```
-Welcome to our coding quiz interface! The purpose of this format is for us to understand your strengths as an engineer.
-
 Your solution will be judged based on:
 
 Whether it works :)
