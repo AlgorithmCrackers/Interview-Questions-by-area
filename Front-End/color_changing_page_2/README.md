@@ -1,5 +1,5 @@
 
-[CodePen](http://codepen.io/prakashn27/pen/OpRPRv)
+[CodePen](http://codepen.io/prakashn27/full/OpRPRv/)
 
 ```
 Your solution will be judged based on:
